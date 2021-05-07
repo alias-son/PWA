@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button onclick="
+        fnProductReady(1, 2000, function (pRet) {
+            console.log(pRet);
+            fnProductReady(2, 1000, function (pRet) {
+                console.log(pRet);
+                fnProductReady(3, 500, function (pRet) {
+                    console.log(pRet);
+                    console.log('가동석이 낮고 유지 보수가 어려운 콜백 지옥 발생!');
+                })
+            })
+        })
+    ">콜백 함수 실행!</button>
+
+    <script>
+        // 콜백 함수
+        function fnProductReady(pNum, pTime, fnCallback) {
+            setTimeout(() => {
+                console.log(pNum);
+                fnCallback('성공적으로 나타남!');
+            }, pTime);
+        }
+    </script>
+</body>
+</html>

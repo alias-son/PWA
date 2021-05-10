@@ -1,10 +1,12 @@
 // 캐시 제목, 캐시할 파일 선언
-const sCacheName = 'hello-pwa_test'  // 캐시 제목 선언
+const sCacheName = 'hello-pwa_v1'  // 캐시 제목 선언
 const aFilesToCache = [        // 캐시할 파일 선언
 	'./', 
 	'./index.html', 
 	'./manifest.json', 
-	'./images/hello-pwa.png'
+	'./images/hello-pwa.png',
+	'./images/icons/android-chrome-192x192.png',
+	'./images/icons/favicon.ico'
 ];
 
 // 서비스 워커 설치하고 캐시 파일 저장

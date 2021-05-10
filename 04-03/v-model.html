@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="main">
+		<p>{{ sMsg }}</p>
+		<input v-model:value="sMsg">
+	</div>
+
+	<script>
+		var main = new Vue({
+			el: '#main',
+			data: {
+				sMsg: 'Hello!!'
+			}
+		})
+	</script>
+</body>
+</html>

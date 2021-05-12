@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="main">
+		<p>click num: {{ nClicks }}</p>
+		<p>countdown: {{ fnCounter }}</p>
+		<!-- 버튼 누르면 fnIncrement 메서트 실행 -->
+		<button v-on:click="fnIncrement">push!</button>
+	</div>
+</body>
+<script>
+	new Vue({
+		el: '#main',
+		data: {
+			nClicks: 0
+		},
+		// computed는 머스태시 안의 로직이 복잡할 때 사용
+		computed: {
+			nCounter() {
+				// nClicks값이 10을 기준으로 1씩 감소
+				return 10 - this.nClicks;
+			}
+		},
+		// methods는 이벤트 핸들러 로직을 실행할 때 사용
+		methods: {
+			fnIncrement() {
+				// nClicks값을 1씩 증가
+				this.nClicks++;
+			}
+		}
+	});
+</script>
+</html>

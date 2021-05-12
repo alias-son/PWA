@@ -6,9 +6,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<style>
 		.fruit_style {
-			border: 1px solid #ccc;
-			background-color: white;
-			padding-left: 1em;
+			border: 5px solid #ccc;
+			background-color: lightcyan;
+			padding-left: 5em;
 		}
 	</style>
 </head>
@@ -26,13 +26,13 @@
 		// component의 data 속성은 반드시 함수로 정의
 		data: function() {
 			return {
-				aFruits: [{ sFruite_name: 'apple' }, {sFruite_name: 'orange'}, {sFruite_name: 'melon'}] }
+				aFruits: [{ sFruit_name: 'apple' }, {sFruit_name: 'orange'}, {sFruit_name: 'melon'}] }
 		},
 		// component template은 화면에 표시할 엘리먼트 구조 정의
 		template: `
 		<div>
 			<div v-for="item in aFruits" class="fruit_style">
-				<p>favorite fruit: {{ item.sFruit_name }}</p>
+				<p>favorite fruits: {{ item.sFruit_name }}</p>
 			</div>
 			<br>
 		</div>`

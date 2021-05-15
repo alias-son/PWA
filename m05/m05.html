@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="app">
+		<simple-counter startnumber="1"></simple-counter>
+		<simple-counter startnumber="10"></simple-counter>
+		<simple-counter startnumber="100"></simple-counter>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script>
+		Vue.component('simple-counter', {
+			props: ['startnumber'],
+			template: `
+				<button v-on:click="fnIncCounter">
+					counter : {{ fnGetCounter }}
+				</button>`,
+			data: function () {
+				return {
+					nCounter: parseInt(this.startnumber)
+				}
+			},
+			computed: {
+				fnGetCounter: function () {
+					return this.nCounter
+				}
+			},
+			methods: {
+				fnIncCounter: function () {
+					this.nCounter += 1
+				}
+			}
+		})
+
+		var gApp = new Vue({
+			el: '#app',
+		})
+	</script>
+</body>
+
+</html>
